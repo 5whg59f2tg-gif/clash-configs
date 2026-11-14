@@ -1,0 +1,280 @@
+# HailianVPN 白嫖直登配置 —— Clash Meta / mihomo
+# 生成时间: 脚本运行时; 节点来自公开订阅源实时测活 + 海连 bootstrap 节点
+# 节点命名: 国旗 emoji + IP 属地（中文）+ IP，重名自动加 #2
+# 说明: AUTO 组只含公共免费池（实测可用）；海连 4 台单独分组，只对 API 域放行，
+#       普通网站会被节点丢弃，故不放入 AUTO。
+mixed-port: 7890
+allow-lan: false
+bind-address: '*'
+mode: rule
+log-level: info
+ipv6: false
+unified-delay: true
+tcp-concurrent: true
+external-controller: 127.0.0.1:9091
+
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.lan'
+    - '*.local'
+    - 'stun.*'
+  nameserver:
+    - https://223.5.5.5/dns-query
+    - https://1.1.1.1/dns-query
+  fallback:
+    - https://8.8.8.8/dns-query
+    - tls://1.0.0.1:853
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+
+proxies:
+  - name: "🇪🇪 爱沙尼亚 178.214.125.1"
+    type: "vless"
+    server: "178.214.125.1"
+    port: 443
+    uuid: "3f3160a0-747d-4fed-bf3d-4d884bfa964d"
+    network: "tcp"
+    udp: true
+    tls: true
+    servername: "conf.emaar.ru"
+    reality-opts:
+      public-key: "ZxCwJxbsZWJYYCPzeWj7_fxJMVhwh4XGfpvjmEIQjHY"
+      short-id: "6172ba9cffe9c22f"
+    client-fingerprint: "edge"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇹 意大利 202.50.253.18"
+    type: "ss"
+    server: "202.50.253.18"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇮🇹 意大利 202.50.253.81"
+    type: "ss"
+    server: "202.50.253.81"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇮🇹 意大利 202.50.253.72"
+    type: "ss"
+    server: "202.50.253.72"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇮🇹 意大利 202.50.253.90"
+    type: "ss"
+    server: "202.50.253.90"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇮🇹 意大利 202.50.253.45"
+    type: "ss"
+    server: "202.50.253.45"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇮🇹 意大利 202.50.253.63"
+    type: "ss"
+    server: "202.50.253.63"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇮🇹 意大利 202.50.253.99"
+    type: "ss"
+    server: "202.50.253.99"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇮🇹 意大利 202.50.253.27"
+    type: "ss"
+    server: "202.50.253.27"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇱🇾 利比亚 196.199.122.2"
+    type: "vless"
+    server: "196.199.122.2"
+    port: 443
+    uuid: "4201786b-d99b-4147-a5f0-20d47acddb81"
+    network: "tcp"
+    udp: true
+    tls: true
+    servername: "7aa271t.es1.h1clayd.click"
+    reality-opts:
+      public-key: "ZSmetD4e9QG5CiXhniHg5HJB68L4kwbgAkJmMHtVwEE"
+      short-id: "42426c882c5fcd41"
+    client-fingerprint: "firefox"
+    flow: "xtls-rprx-vision"
+  - name: "🇳🇬 尼日利亚 196.196.149.80"
+    type: "vless"
+    server: "196.196.149.80"
+    port: 443
+    uuid: "4201786b-d99b-4147-a5f0-20d47acddb81"
+    network: "tcp"
+    udp: true
+    tls: true
+    servername: "7aa271t.es1.h1clayd.click"
+    reality-opts:
+      public-key: "ZSmetD4e9QG5CiXhniHg5HJB68L4kwbgAkJmMHtVwEE"
+      short-id: "42426c882c5fcd41"
+    client-fingerprint: "firefox"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇹 意大利 202.50.253.54"
+    type: "ss"
+    server: "202.50.253.54"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇮🇹 意大利 202.50.253.36"
+    type: "ss"
+    server: "202.50.253.36"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇨🇦 加拿大 172.64.145.93"
+    type: "vmess"
+    server: "172.64.145.93"
+    port: 443
+    uuid: "6a89a215-22bf-4bd7-9642-b95b2e09583a"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "guanwang.awsno.com"
+    network: "ws"
+    ws-opts:
+      path: "/hls/cctv5phd.m3u8"
+      headers:
+        Host: "guanwang.awsno.com"
+  - name: "🇯🇵 日本 52.197.38.79"
+    type: "vless"
+    server: "52.197.38.79"
+    port: 443
+    uuid: "68253ac8-bb7a-3991-9e4e-e37c2f3e93b7"
+    network: "tcp"
+    udp: true
+    tls: true
+    servername: "download-installer.cdn.mozilla.net"
+    flow: "xtls-rprx-vision"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "gXx1qNyP0XP_J2bVqOQPmAFgeTKVQrnZtQ2Z1kKYRBE"
+      short-id: "0123456789abcdef"
+  - name: "🇰🇷 韩国 3.39.182.48"
+    type: "vless"
+    server: "3.39.182.48"
+    port: 443
+    uuid: "68253ac8-bb7a-3991-9e4e-e37c2f3e93b7"
+    network: "tcp"
+    udp: true
+    tls: true
+    servername: "aws.amazon.com"
+    flow: "xtls-rprx-vision"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "QT7nkAGQCFVzLcGwpLmtR-y1RO2ABLJOTHxMoYbCnG8"
+      short-id: "0123456789abcdef"
+  - name: "🇺🇸 美国 192.255.201.54"
+    type: "vless"
+    server: "192.255.201.54"
+    port: 443
+    uuid: "68253ac8-bb7a-3991-9e4e-e37c2f3e93b7"
+    network: "tcp"
+    udp: true
+    tls: true
+    servername: "images-na.ssl-images-amazon.com"
+    flow: "xtls-rprx-vision"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "qNZ41BYKUndUrAF14A7564jzPjk0SGDct4la8-91gmM"
+      short-id: "0123456789abcdef"
+  - name: "🇺🇸 美国 104.223.42.162"
+    type: "vless"
+    server: "104.223.42.162"
+    port: 443
+    uuid: "68253ac8-bb7a-3991-9e4e-e37c2f3e93b7"
+    network: "tcp"
+    udp: true
+    tls: true
+    servername: "unmc.zoom.us"
+    flow: "xtls-rprx-vision"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "X79__QahwztjyL962mlqUoe1yb7yI3EKCE5rOJBuwHM"
+      short-id: "0123456789abcdef"
+
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - AUTO
+      - DIRECT
+      - "🇪🇪 爱沙尼亚 178.214.125.1"
+      - "🇮🇹 意大利 202.50.253.18"
+      - "🇮🇹 意大利 202.50.253.81"
+      - "🇮🇹 意大利 202.50.253.72"
+      - "🇮🇹 意大利 202.50.253.90"
+      - "🇮🇹 意大利 202.50.253.45"
+      - "🇮🇹 意大利 202.50.253.63"
+      - "🇮🇹 意大利 202.50.253.99"
+      - "🇮🇹 意大利 202.50.253.27"
+      - "🇱🇾 利比亚 196.199.122.2"
+      - "🇳🇬 尼日利亚 196.196.149.80"
+      - "🇮🇹 意大利 202.50.253.54"
+      - "🇮🇹 意大利 202.50.253.36"
+      - "🇨🇦 加拿大 172.64.145.93"
+  - name: AUTO
+    type: url-test
+    url: http://cp.cloudflare.com/generate_204
+    interval: 180
+    tolerance: 80
+    lazy: false
+    proxies:
+      - "🇪🇪 爱沙尼亚 178.214.125.1"
+      - "🇮🇹 意大利 202.50.253.18"
+      - "🇮🇹 意大利 202.50.253.81"
+      - "🇮🇹 意大利 202.50.253.72"
+      - "🇮🇹 意大利 202.50.253.90"
+      - "🇮🇹 意大利 202.50.253.45"
+      - "🇮🇹 意大利 202.50.253.63"
+      - "🇮🇹 意大利 202.50.253.99"
+      - "🇮🇹 意大利 202.50.253.27"
+      - "🇱🇾 利比亚 196.199.122.2"
+      - "🇳🇬 尼日利亚 196.196.149.80"
+      - "🇮🇹 意大利 202.50.253.54"
+      - "🇮🇹 意大利 202.50.253.36"
+      - "🇨🇦 加拿大 172.64.145.93"
+  # 这 4 台只对 sub.ironflux.net 这类 SNI 放行，普通网站会被节点丢弃；
+  # 放在这里仅供测速/嗅探，别当出口用。
+  - name: 海连节点(仅API)
+    type: select
+    proxies:
+      - "🇯🇵 日本 52.197.38.79"
+      - "🇰🇷 韩国 3.39.182.48"
+      - "🇺🇸 美国 192.255.201.54"
+      - "🇺🇸 美国 104.223.42.162"
+
+rules:
+  - DOMAIN-SUFFIX,sub.ironflux.net,DIRECT
+  - DOMAIN-SUFFIX,91159521.xyz,DIRECT
+  - DOMAIN-SUFFIX,59521541.xyz,DIRECT
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - GEOIP,CN,DIRECT
+  - MATCH,PROXY
